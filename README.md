@@ -1,48 +1,7 @@
 # Cartoonizer
 
-> Convert images and videos into a cartoon!
+> Convert images and videos into a cartoon
 
-The webapp is deployed here - https://cartoonize-lkqov62dia-de.a.run.app
-<div style="text-align:center"><img height="100" alt="Powered by Algorithmia" style="border-width:0" src="static/sample_images/algorithmia.jpeg" /></div>
-
-You can find a writeup on this webapp's architecture [here](https://medium.com/@Niraj_pandkar/how-we-built-an-inexpensive-scalable-architecture-to-cartoonize-the-world-8610050f90a0)!
-
----
-
-## Contents
-
-- [Prerequisites for Google Cloud and Algorithmia](#prerequisites-for-google-cloud-and-algorithmia)
-- [Installation](#installation)
-  - [Docker](#using-docker)
-  - [VirtualEnv](#using-virtualenv)
-  - [Google Colab](#using-google-colab)
-- [Sample Image and Video](#sample-image-and-video)
-
----
-
-## Prerequisites for Google Cloud and Algorithmia
-
-**These are important steps if you want to leverage Google buckets, signed URLs and Algorithmia's platform. Skip this if you want to run locally / colab.**
-
-### Cloud Run authentication
-To use any functionalities pertaining to Google Cloud, you'll need a global authentication file (JSON). You can obtain this JSON by following the steps given here - [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started)
-
-After you get the JSON file, rename it to `token.json` (so that it's compatible with the codebase). 
-
-Set the environment variable in your terminal -
-```
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/token.json"
-```
-**Notes**:
-- You can set it permanently by adding this line to `~/.bashrc`.
-- `Dockerfile` already includes the setting of this particular environment variable. :)
-
-
-### Algorithmia
-We used the Serveless AI Layer product of [Algorithmia](https://algorithmia.com/serverless-ai-layer) for inference on videos.
-To learn more on how to deploy your model in Algorithmia, check here - https://algorithmia.com/developers
-
----
 
 ## Installation
 
@@ -87,13 +46,13 @@ pip install -r requirements.txt
 python app.py
 ```
 
-### Using [Google Colab](https://colab.research.google.com/drive/1oDhMEVMcsRbe7bt-2A7cDsx44KQpQwuB?usp=sharing)
+### Using [Google Colab]
 1. Clone the repository using either of the below mentioned way:
    - Using Command:
         - Create a new Notebook in Colab and in the cell execute the below command.  
         
         ```
-         ! git clone https://github.com/experience-ml/cartoonize.git
+         ! git clone https://github.com/bot-head-bit/cartoonize.git
         ```
         **Note:** Don't forget to add `!` at the beginning of the command
         
@@ -135,9 +94,6 @@ python app.py
    !python app.py
    ```
 
-#### Note : Sample [Google Colab Notebook](https://colab.research.google.com/drive/1oDhMEVMcsRbe7bt-2A7cDsx44KQpQwuB?usp=sharing) for reference
-
----
 
 ## Sample Image and Video
 
@@ -151,15 +107,7 @@ python app.py
 
 ## License
 
-1. Copyright © Cartoonizer ([Demo webapp](https://cartoonize-lkqov62dia-de.a.run.app/))
-
-    - Authors: [Niraj Pandkar](https://twitter.com/Niraj_pandkar) and [Tejas Mahajan](https://twitter.com/tjdevWorks).
-
-    - Licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) 
-    - Commercial application is prohibited by license
-
-
-2. Copyright (C) Xinrui Wang, Jinze Yu. ([White box cartoonization](https://github.com/SystemErrorWang/White-box-Cartoonization))
+Copyright (C) Xinrui Wang, Jinze Yu. ([White box cartoonization](https://github.com/SystemErrorWang/White-box-Cartoonization))
     - All rights reserved. 
     - Licensed under the CC BY-NC-SA 4.0 
     - Also, Commercial application is prohibited license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
